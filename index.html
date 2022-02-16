@@ -10,9 +10,90 @@
     
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/screen2.css">
     <title>Buzz Quizz</title>
 </head>
 <body>
-    <h1>hello world</h1>
+    <header>
+        <h1>BuzzQuizz</h1>
+    </header>
+
+    <section class="quizz-container active">
+        <div class="banner">
+            <img src="./assets/Rectangle34.png" alt="">
+            <p>O quão Potterhead é você?</p>
+        </div>
+
+        <div class="quizz-card">
+            <div class="header-quizz-card">
+                <p>Em qual animal Olho-Tonto Moody transfigurou mallfoy?</p>
+            </div>
+            <section class="quizz-options">
+                <div class="item wrong disabled">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item correct disabled">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item wrong disabled">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item wrong">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="quizz-card">
+            <div class="header-quizz-card">
+                <p>Em qual animal Olho-Tonto Moody transfigurou mallfoy?</p>
+            </div>
+            <section class="quizz-options">
+                <div class="item">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="quizz-card result-card active">
+            <div class="header-quizz-card">
+                <p>88% de acerto: Você é praticamente um aluno de Hogwarts!</p>
+            </div>
+            <section class="quizz-options">
+                <div class="item result">
+                    <div class="result-image" style="background-image: url('./assets/gramdpa.png');">
+                        
+                    </div>
+                    <p>
+                        Parabéns Potterhead! Bem-vindx a Hogwarts,
+                        aproveite o loop infinito de comida e clique no 
+                        botão abaixo para usar o vira-tempo e reiniciar este teste.
+                    </p>
+                </div>
+            </section>
+        </div> 
+
+        <div class="footer-quizz active">
+            <button>Reiniciar Quizz</button>
+            <button>Voltar pra home</button>
+        </div>
+    </section>
 </body>
 </html>

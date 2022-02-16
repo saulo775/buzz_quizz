@@ -1,7 +1,7 @@
 
 :root{
     --background: #FAFAFA;
-    --red: #EC362D
+    --red: #EC362D;
     --green: #009C22;
     --black: #000000;
 
@@ -11,6 +11,7 @@
     --text-title: #000000;
     --text-paragraf: #484848;
     --text-input: #B9B9B9;
+    --button-text: #818181;
 
     --shape: #FFFFFF;
 }
@@ -22,7 +23,7 @@
 }
 
 html {
-    @media (max-width: 1080px){
+    @media (max-width: 1100px){
         font-size: 93,75%;
     }
 
@@ -33,6 +34,7 @@ html {
 
 body {
     -webkit-font-smooth: antialiased;
+    font-family: 'Roboto', sans-serif;;
 }
 
 a{
