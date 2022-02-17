@@ -15,61 +15,50 @@
     <title>Buzz Quizz</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <div class="screen1 hidden1">
     <header >
         <nav>BuzzQuizz</nav>
     </header>
-    <div class="new-quizz">
-        <p class="text">Você não criou nenhum quiz ainda :(</p>
-        <p class="button" onclick="">Criar Quizz</p>
-    </div>
-    <div class="containerQuizz">
-        <div class="titulo">Todos os Quizzes</div>
-        <div class="quizzes">
-            </div>
+
+    <!-- TELA 1 --> 
+    <!-- TELA 1 --> 
+    <!-- TELA 1 -->
+    <!-- colocar classe active na section para ativar -->
+    <section class="screen1 active">
+        <!-- colocar classe active na div para ativar -->
+        <div class="new-quizz active">
+            <p class="text">Você não criou nenhum <br> quiz ainda :(</p>
+            <p class="button" onclick="">Criar Quizz</p>
         </div>
-    </div>
-    </div>
-    <div class="tela2 hidden2">
-        <header>
-            <nav>BuzzQuizz2</nav>
-        </header>
-        <div class="containerQuizz2topo">
-            <div class="topo"> 
-                <div class="titulo">Seus Quizzes</div>
+        <!-- colocar classe active na section para ativar -->
+        <section class="list-your-quizzes active">
+            <div class="header-quizzes">
+                <h2>Seus Quizzes</h2>
                 <ion-icon onclick="" name="add-circle"></ion-icon>
             </div>
-            <div class="Q1">
-                <img src="https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg" alt="">
-                <h1 onclick=""></h1>
-            </div>
-            <div class="Q1">
-                <img src="https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg" alt="">
-                <h1 onclick=""></h1>
-            </div>
-        </div>
-        <div class="containerQuizz">
-            <div class="titulo">Todos os Quizzes</div>
-            <div class="Q1">
-                <img src="https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg" alt="">
-                <h1 onclick=""></h1>
-            </div>
-            <div class="Q1">
-                <img src="https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg" alt="">
-                <h1 onclick=""></h1>
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="/script.js"></script>
-=======
 
-    <!-- HEADER -->
-    <!-- HEADER -->
-    <!-- HEADER -->
-    <header>
-        <h1>BuzzQuizz</h1>
-    </header>
+            <div class="quizz" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg');">
+                <p>O quão fã de cleber bambam você é</p>
+            </div>
+
+            <div class="quizz" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg');">
+                <p>O quão fã de cleber bambam você é</p>
+            </div>
+        </section>
+
+        <section class="list-all-quizzes">
+            <div class="header-quizzes">
+                <h2>Todos os Quizzes</h2>
+            </div>
+
+            <div class="quizz" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg');">
+                <p>O quão fã de cleber bambam você é</p>
+            </div>
+
+            <div class="quizz" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg');">
+                <p>O quão fã de cleber bambam você é</p>
+            </div>
+        </section>
+    </section>
 
     <!-- TELA 2 --> 
     <!-- TELA 2 --> 
@@ -292,6 +281,5 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./scripts/script.js"></script>
->>>>>>> 8a165c1d31ed163efaa7c4c2dc11c5cfd61a9583
 </body>
 </html>
