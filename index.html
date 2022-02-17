@@ -10,9 +10,12 @@
     
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/screen2.css">
+    <link rel="stylesheet" href="./styles/screen3.css">
     <title>Buzz Quizz</title>
 </head>
 <body>
+<<<<<<< HEAD
     <div class="screen1 hidden1">
     <header >
         <nav>BuzzQuizz</nav>
@@ -59,5 +62,236 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="/script.js"></script>
+=======
+
+    <!-- HEADER -->
+    <!-- HEADER -->
+    <!-- HEADER -->
+    <header>
+        <h1>BuzzQuizz</h1>
+    </header>
+
+    <!-- TELA 2 --> 
+    <!-- TELA 2 --> 
+    <!-- TELA 2 -->
+    <!-- colocar classe active na section para ativar -->
+    <section class="quizz-container active">
+        <div class="banner">
+            <img src="./assets/Rectangle34.png" alt="">
+            <p>O quão Potterhead é você?</p>
+        </div>
+
+        <div class="quizz-card">
+            <div class="header-quizz-card">
+                <p>Em qual animal Olho-Tonto Moody transfigurou mallfoy?</p>
+            </div>
+            <section class="quizz-options">
+                <div class="item wrong disabled">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item correct disabled">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item wrong disabled">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item wrong">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="quizz-card">
+            <div class="header-quizz-card">
+                <p>Em qual animal Olho-Tonto Moody transfigurou mallfoy?</p>
+            </div>
+            <section class="quizz-options">
+                <div class="item">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/gato.png" alt="">
+                    <p>gato</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="quizz-card result-card active">
+            <div class="header-quizz-card">
+                <p>88% de acerto: Você é praticamente um aluno de Hogwarts!</p>
+            </div>
+            <section class="quizz-options">
+                <div class="item result">
+                    <div class="result-image" style="background-image: url('./assets/gramdpa.png');">
+                        
+                    </div>
+                    <p>
+                        Parabéns Potterhead! Bem-vindx a Hogwarts,
+                        aproveite o loop infinito de comida e clique no 
+                        botão abaixo para usar o vira-tempo e reiniciar este teste.
+                    </p>
+                </div>
+            </section>
+        </div> 
+
+        <div class="footer-quizz active">
+            <button>Reiniciar Quizz</button>
+            <button>Voltar pra home</button>
+        </div>
+    </section>
+
+    <!-- TELA 3 -->
+    <!-- TELA 3 -->
+    <!-- TELA 3 -->
+    <!-- colocar classe active na section para ativar -->
+    <section class="create-quizz-container active">
+        <section class="create-basic-info active">
+            <h2 class="title-create-quizz">Comece pelo começo</h2>
+            <div class="inputs-container">
+                <input type="text" placeholder="Título do seu quizz">
+                <input type="url" name="image-url" id="" placeholder="URL da imagem do seu quizz">
+                <input type="number" name="number-questions" id="" placeholder="Quantidade de perguntas do quizz">
+                <input type="number" name="number-levels" id="" placeholder="quantidade de níveis do quizz">
+            </div>
+            <button class="btn-main">Prosseguir para criar perguntas</button>
+        </section>
+
+        <section class="create-questions active">
+            <h2 class="title-create-quizz">Crie suas perguntas</h2>
+
+            <section class="container-inputs-qts-and-lvls">
+                <!-- para esconder o icone deve adcionar a class="disabled" -->
+                <div class="title-qt-and-lvl disabled">
+                    <h2>Pergunta 1</h2>
+                    <ion-icon name="create-outline"></ion-icon>
+                </div>
+                <section class="inputs-qt-and-lvls active">
+                    <div class="question-and-image_url">
+                        <input type="text" placeholder="Texto da pergunta">
+                        <input type="text" placeholder="Cor de fundo da pergunta">
+                    </div>
+    
+                    <h2>Resposta correta</h2>
+                    <div class="question-and-image_url">
+                        <input type="text" placeholder="Resposta correta">
+                        <input type="text" placeholder="URL da imagem">
+                    </div>
+    
+                    <h2>Respostas incorretas</h2>
+                    <div class="question-and-image_url">
+                        <input type="text" placeholder="Resposta incorreta 1">
+                        <input type="text" placeholder="URL da imagem 1">
+                        <input type="text" placeholder="Resposta incorreta 2">
+                        <input type="text" placeholder="URL da imagem 2">
+                        <input type="text" placeholder="Resposta incorreta 3">
+                        <input type="text" placeholder="URL da imagem 3">
+                    </div>
+                </section>
+            </section>
+
+            <section class="container-inputs-qts-and-lvls">
+                <!-- para esconder o icone deve adcionar a class="disabled" -->
+                <div class="title-qt-and-lvl">
+                    <h2>Pergunta 2</h2>
+                    <ion-icon name="create-outline"></ion-icon>
+                </div>
+                <section class="inputs-qt-and-lvls">
+                    <div class="question-and-image_url">
+                        <input type="text" placeholder="Texto da pergunta">
+                        <input type="text" placeholder="Cor de fundo da pergunta">
+                    </div>
+    
+                    <h2>Resposta correta</h2>
+                    <div class="question-and-image_url">
+                        <input type="text" placeholder="Resposta correta">
+                        <input type="text" placeholder="URL da imagem">
+                    </div>
+    
+                    <h2>Respostas incorretas</h2>
+                    <div class="question-and-image_url">
+                        <input type="text" placeholder="Resposta incorreta 1">
+                        <input type="text" placeholder="URL da imagem 1">
+                        <input type="text" placeholder="Resposta incorreta 2">
+                        <input type="text" placeholder="URL da imagem 2">
+                        <input type="text" placeholder="Resposta incorreta 3">
+                        <input type="text" placeholder="URL da imagem 3">
+                    </div>
+                </section>
+            </section>
+            <button class="btn-main">Prosseguir para criar niveis</button>
+        </section>
+
+        <section class="create-levels active">
+            <h2 class="title-create-quizz">Agora, decida os níveis</h2>
+
+            <section class="container-inputs-qts-and-lvls">
+                <!-- para esconder o icone deve adcionar a class="disabled" -->
+                <div class="title-qt-and-lvl disabled">
+                    <h2>Nível 1</h2>
+                    <ion-icon name="create-outline"></ion-icon>
+                </div>
+                <section class="inputs-qt-and-lvls active">
+                    <div class="level-and-image_url">
+                        <input type="text" placeholder="Título do nível">
+                        <input type="number" name="percentage" id="" placeholder="% de acerto mínima">
+                        <input type="url" name="url-image-level" id="" placeholder="URL da imagem do nível">
+                        <textarea name="description of level" id="" cols="30" rows="10" placeholder="Descrição do nível"></textarea>
+                    </div>
+                </section>
+            </section>
+
+            <section class="container-inputs-qts-and-lvls">
+                <!-- para esconder o icone deve adcionar a class="disabled" -->
+                <div class="title-qt-and-lvl" >
+                    <h2>Nível 2</h2>
+                    <ion-icon name="create-outline"></ion-icon>
+                </div>
+                <section class="inputs-qt-and-lvls">
+                    <div class="level-and-image_url">
+                        <input type="text" placeholder="Título do nível">
+                        <input type="number" name="percentage" id="" placeholder="% de acerto mínima">
+                        <input type="url" name="url-image-level" id="" placeholder="URL da imagem do nível">
+                        <textarea name="description of level" id="" cols="30" rows="10" placeholder="Descrição do nível"></textarea>
+                    </div>
+                </section>
+            </section>
+
+            <button class="btn-main">Finalizar Quizz</button>
+        </section>
+
+        <section class="create-quizz-result content active">
+            <h2 class="title-create-quizz">Seu quizz está pronto!</h2>
+            <div 
+                class="create-result-image" 
+                style="background-image: linear-gradient(to bottom, transparent 0%,rgba(0, 0, 0, 0.89) 95%),url('./assets/hogwarts.jpg');"
+            >
+                <p>O quão Potterhead é você?</p>
+            </div>
+            <div class="footer-create-quizz">
+                <button>Acessar Quizz</button>
+                <button>Voltar pra home</button>
+            </div>
+        </section>
+    </section>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./scripts/script.js"></script>
+>>>>>>> 8a165c1d31ed163efaa7c4c2dc11c5cfd61a9583
 </body>
 </html>
