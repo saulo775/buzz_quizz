@@ -1,6 +1,6 @@
 
 :root{
-    --background: #FAFAFA;
+    --background: #f1f1f1;
     --red: #EC362D;
     --green: #009C22;
     --black: #000000;
@@ -10,8 +10,10 @@
 
     --text-title: #000000;
     --text-paragraf: #484848;
-    --text-input: #B9B9B9;
+    --text-input: #BABABA;
     --button-text: #818181;
+    --input-color: #D1D1D1;
+    --input-focus: #747474;
 
     --shape: #FFFFFF;
 }
@@ -34,7 +36,8 @@ html {
 
 body {
     -webkit-font-smooth: antialiased;
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background);
 }
 
 a{

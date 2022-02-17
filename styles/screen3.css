@@ -1,0 +1,209 @@
+.create-basic-info,
+.create-questions,
+.create-levels,
+.create-quizz-result,
+.create-quizz-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.create-basic-info.active,
+.create-questions.active,
+.create-levels.active,
+.create-quizz-result.active,
+.create-quizz-container.active{
+    display: flex;
+}
+
+
+.title-create-quizz {
+    padding: 2.3rem 0 1.8rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.inputs-container {
+    flex: 1;
+    display: flex;
+    width: 23.5rem;
+    padding: 1.25rem 1rem;
+    margin-bottom: 1.5rem;
+    flex-direction: column;
+    background-color: var(--shape);
+}
+
+.inputs-container input {
+    flex: 1;
+    border: solid 2px #dadada;
+    border-radius: 5px;
+    color: var(--text-paragraf);
+    font-size: 1.25rem;
+    font-weight: 400;
+    padding: 0.75rem 1rem;
+}
+
+.inputs-container input:focus {
+    outline: 2px solid var(--input-focus);
+    border: none;
+}
+
+.inputs-container input + input {
+    margin-top: 0.5rem;
+}
+
+.btn-main {
+    background-color: var(--red);
+    padding: 0.75rem 2.5rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    margin-bottom: 0.5rem;
+    color: var(--shape);
+    width: 20.25rem;
+    margin: 2rem 0;
+}
+
+
+
+/*====CRIAR PERGUNTAS E LEVELS====*/
+/*====CRIAR PERGUNTAS E LEVELS====*/
+/*====CRIAR PERGUNTAS E LEVELS====*/
+/*====CRIAR PERGUNTAS E LEVELS====*/
+/*====CRIAR PERGUNTAS E LEVELS====*/
+.container-inputs-qts-and-lvls {
+    flex: 1;
+    display: flex;
+    width: 23.5rem;
+    padding: 1.25rem 1rem;
+    margin-bottom: 1.5rem;
+    flex-direction: column;
+    background-color: var(--shape);
+}
+
+.title-qt-and-lvl {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.title-qt-and-lvl h2 {
+    font-size: 1.25rem;
+}
+
+.title-qt-and-lvl ion-icon {
+    font-size: 1.5rem;
+}
+
+.title-qt-and-lvl.disabled ion-icon {
+    display: none;
+}
+
+.inputs-qt-and-lvls {
+    flex: 1;
+    flex-direction: column;
+    display: none;
+}
+
+.inputs-qt-and-lvls.active {
+    display: flex;
+}
+
+.level-and-image_url textarea,
+.level-and-image_url,
+.question-and-image_url {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.75rem;
+}
+
+.level-and-image_url textarea,
+.level-and-image_url input,
+.question-and-image_url input {
+    border: solid 2px #dadada;
+    border-radius: 5px;
+    color: var(--text-paragraf);
+    font-size: 1.25rem;
+    font-weight: 400;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.question-and-image_url input:last-child {
+    margin-bottom: none;
+}
+
+.level-and-image_url textarea:focus {
+    outline: 2px solid var(--input-focus);
+    border: none;
+}
+
+.level-and-image_url input:focus,
+.question-and-image_url input:focus {
+    outline: 2px solid var(--input-focus);
+    border: none;
+}
+
+
+.inputs-qt-and-lvls h2{
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+
+/*====RESULTADO DA CRIAÇÃO====*/
+/*====RESULTADO DA CRIAÇÃO====*/
+/*====RESULTADO DA CRIAÇÃO====*/
+/*====RESULTADO DA CRIAÇÃO====*/
+/*====RESULTADO DA CRIAÇÃO====*/
+
+.create-result-image {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 21.25rem;
+    height: 11.25rem;
+    background-repeat: round;
+}
+
+.create-result-image p{
+    flex: 1;
+    align-items: flex-end;
+    font-size: 1.25rem;
+    color: var(--shape);
+    padding: 1rem;
+}
+
+
+.footer-create-quizz {
+    flex: 1;
+    margin: 2rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-create-quizz button {
+    padding: 0.75rem 2.5rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    color: var(--button-text);
+}
+
+.footer-create-quizz button:first-child {
+    background-color: var(--red);
+    color: var(--shape);
+    margin-bottom: 0.5rem;
+}
