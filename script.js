@@ -8,7 +8,6 @@ function displayMessages(anwsers) {
 
     let anwsersreceived = anwsers.data
     let q1 = document.querySelector(".quizzes");
-    console.log(anwsers.data)
     
     for (let i = 0; i < anwsersreceived.length; i++) { 
         q1.innerHTML += `
@@ -18,4 +17,19 @@ function displayMessages(anwsers) {
     `}
 }
 
+
 getData();
+
+
+/*FUNÇÃO DE CRIAR QUIZZ*/
+
+function handleCreateQuizz() {
+    let screenOne = document.querySelector('.screen1');
+    let screenThree = document.querySelector('.create-quizz-container');
+
+    screenOne.classList.remove('active');
+    screenThree.classList.add('active');
+
+    console.log(screenOne);
+    console.log(screenThree);
+}

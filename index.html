@@ -27,13 +27,13 @@
         <!-- colocar classe active na div para ativar -->
         <div class="new-quizz active">
             <p class="text">Você não criou nenhum <br> quiz ainda :(</p>
-            <p class="button" onclick="">Criar Quizz</p>
+            <p class="button" onclick="handleCreateQuizz()">Criar Quizz</p>
         </div>
         <!-- colocar classe active na section para ativar -->
         <section class="list-your-quizzes active">
             <div class="header-quizzes">
                 <h2>Seus Quizzes</h2>
-                <ion-icon onclick="" name="add-circle"></ion-icon>
+                <ion-icon onclick="handleCreateQuizz()" name="add-circle"></ion-icon>
             </div>
 
             <div class="quizz" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg');">
@@ -64,7 +64,7 @@
     <!-- TELA 2 --> 
     <!-- TELA 2 -->
     <!-- colocar classe active na section para ativar -->
-    <section class="quizz-container active">
+    <section class="quizz-container">
         <div class="banner">
             <img src="./assets/Rectangle34.png" alt="">
             <p>O quão Potterhead é você?</p>
@@ -146,7 +146,8 @@
     <!-- TELA 3 -->
     <!-- TELA 3 -->
     <!-- colocar classe active na section para ativar -->
-    <section class="create-quizz-container active">
+    <section class="create-quizz-container">
+        <!-- colocar classe active na section para ativar -->
         <section class="create-basic-info active">
             <h2 class="title-create-quizz">Comece pelo começo</h2>
             <div class="inputs-container">
@@ -158,7 +159,8 @@
             <button class="btn-main">Prosseguir para criar perguntas</button>
         </section>
 
-        <section class="create-questions active">
+        <!-- colocar classe active na section para ativar -->
+        <section class="create-questions">
             <h2 class="title-create-quizz">Crie suas perguntas</h2>
 
             <section class="container-inputs-qts-and-lvls">
@@ -223,7 +225,8 @@
             <button class="btn-main">Prosseguir para criar niveis</button>
         </section>
 
-        <section class="create-levels active">
+        <!-- colocar classe active na section para ativar -->
+        <section class="create-levels ">
             <h2 class="title-create-quizz">Agora, decida os níveis</h2>
 
             <section class="container-inputs-qts-and-lvls">
@@ -261,7 +264,8 @@
             <button class="btn-main">Finalizar Quizz</button>
         </section>
 
-        <section class="create-quizz-result content active">
+        <!-- colocar classe active na section para ativar -->
+        <section class="create-quizz-result content ">
             <h2 class="title-create-quizz">Seu quizz está pronto!</h2>
             <div 
                 class="create-result-image" 
@@ -280,6 +284,6 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./scripts/script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
