@@ -1,3 +1,4 @@
+let array1 = []
 
 function getData() {
     const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
@@ -6,15 +7,14 @@ function getData() {
 
 function displayMessages(anwsers) {
 
-    let anwsersreceived = anwsers.data
+    let anwsersreceived = anwsers.data;
     let q1 = document.querySelector(".quizzes");
     
     for (let i = 0; i < anwsersreceived.length; i++) { 
-        q1.innerHTML += `
-        <div class="result-image"  style="background-image: linear-gradient(to bottom, transparent 0%,#000 95%), url(${anwsersreceived[i].image});">            
-        <h1 onclick="">"${anwsersreceived[i].title}"</h1>
-            </div>
-    `}
+        //console.log(anwsers.data[i])
+        array1[i] = anwsers.data[i];
+    }
+
 }
 
 
@@ -29,7 +29,4 @@ function handleCreateQuizz() {
 
     screenOne.classList.remove('active');
     screenThree.classList.add('active');
-
-    console.log(screenOne);
-    console.log(screenThree);
 }

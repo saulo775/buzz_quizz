@@ -36,11 +36,11 @@
                 <ion-icon onclick="handleCreateQuizz()" name="add-circle"></ion-icon>
             </div>
 
-            <div class="quizz" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg');">
+            <div class="quizz" style="background-image: url('https://images.unsplash.com/photo-1644300616688-90b3f5f7792a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80');">
                 <p>O quão fã de cleber bambam você é</p>
             </div>
 
-            <div class="quizz" style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg');">
+            <div class="quizz" style="background-image: url('https://images.unsplash.com/photo-1644300616688-90b3f5f7792a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80');">
                 <p>O quão fã de cleber bambam você é</p>
             </div>
         </section>
@@ -148,19 +148,19 @@
     <!-- colocar classe active na section para ativar -->
     <section class="create-quizz-container">
         <!-- colocar classe active na section para ativar -->
-        <section class="create-basic-info active">
+        <section class="create-basic-info active" id="sub-screen1">
             <h2 class="title-create-quizz">Comece pelo começo</h2>
             <div class="inputs-container">
-                <input type="text" placeholder="Título do seu quizz">
+                <input type="text" name="teste" placeholder="Título do seu quizz" min="20" max="65">
                 <input type="url" name="image-url" id="" placeholder="URL da imagem do seu quizz">
-                <input type="number" name="number-questions" id="" placeholder="Quantidade de perguntas do quizz">
-                <input type="number" name="number-levels" id="" placeholder="quantidade de níveis do quizz">
+                <input type="number" min="3" name="number-questions" id="" placeholder="Quantidade de perguntas do quizz">
+                <input type="number" min="2" name="number-levels" id="" placeholder="quantidade de níveis do quizz">
             </div>
-            <button class="btn-main">Prosseguir para criar perguntas</button>
+            <button class="btn-main" onclick="handleGetInfos('inputs-container')">Prosseguir para criar perguntas</button>
         </section>
 
         <!-- colocar classe active na section para ativar -->
-        <section class="create-questions">
+        <section class="create-questions" id="sub-screen2">
             <h2 class="title-create-quizz">Crie suas perguntas</h2>
 
             <section class="container-inputs-qts-and-lvls">
@@ -169,6 +169,8 @@
                     <h2>Pergunta 1</h2>
                     <ion-icon name="create-outline"></ion-icon>
                 </div>
+
+                <!-- para esconder o icone deve adcionar a class="disabled" -->
                 <section class="inputs-qt-and-lvls active">
                     <div class="question-and-image_url">
                         <input type="text" placeholder="Texto da pergunta">
@@ -284,6 +286,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./scripts/createQuizz.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
