@@ -45,6 +45,7 @@ a{
     color: currentColor;
 }
 
+ion-icon,
 button {
     cursor: pointer;
 }
