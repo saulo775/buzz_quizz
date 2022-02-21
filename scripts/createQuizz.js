@@ -3,8 +3,10 @@ const URLTEST = new RegExp(/^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+
 const COLORTEST = new RegExp('^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})|([0-9a-fA-F]{3})$');
 let dataSubScreen1 = {};
 let dataSubScreen2 = [];
+let dataSubScreen3 = [];
 const MINVALUEINPUT = 4;
 const MAXVALUEINPUT = 65;
+const MINVALUETEXTAREA = 6;
 
 
 /*=======PEGA DADOS DA SUB-TELA 1======*/
@@ -59,6 +61,14 @@ function verifyType(input) {
             return false;
         }
     }else if(input.type === 'number'){
+        if (input.name == 'percentage') {
+            if (Number(input.value >0) && Number(input.value < 100)) {
+                return true;
+            }else{
+                return false;
+            }
+        }
+
         if (Number(input.min) > Number(input.value)) {
             return false
         }
@@ -97,7 +107,6 @@ function handleEditInfoCard(header) {
     titleCard.classList.add('disabled')
     boxInputs.querySelector('.inputs-qt-and-lvls').classList.add('active')
 }
-
 
 /*=======MOSTRA NA TELA AS QUESTOES======*/
 function displayInputQuestions(nextScreen) {
@@ -150,7 +159,7 @@ function handleGetQuestionsInfo(subScreen) {
     let contInputNoFilled = 0;
     let questions = screen.querySelectorAll('.inputs-qt-and-lvls');
     
-    inputs.forEach(input => contInputNoFilled += verifyInputQuestionsIsFilled(input));
+    inputs.forEach(input => contInputNoFilled += verifyInputIsFilled(input));
 
     if (contInputNoFilled > 0) {
         window.alert("um ou mais campos não foi preenchido corretamente")
@@ -194,21 +203,21 @@ function handleGetQuestionsInfo(subScreen) {
 }
 
 /*=======VERIFICA SE OS INPUTS DAS QUESTOES ESTÃO VAZIOS======*/
-function verifyInputQuestionsIsFilled(input) {
-    let cont = 0;
+// function verifyInputQuestionsIsFilled(input) {
+//     let cont = 0;
 
-    if (input.value === "" || verifyType(input) === false) {
-        input.classList.add('is-not-filled')
-        input.value = ""
-        cont++
-    }else {
-        input.classList.remove('is-not-filled')
-        if (cont > 0) {
-            cont--;
-        }
-    }
-    return cont;
-}
+//     if (input.value === "" || verifyType(input) === false) {
+//         input.classList.add('is-not-filled')
+//         input.value = ""
+//         cont++
+//     }else {
+//         input.classList.remove('is-not-filled')
+//         if (cont > 0) {
+//             cont--;
+//         }
+//     }
+//     return cont;
+// }
 
 function getSubScreen(screenID){
     return screenID;
@@ -241,15 +250,90 @@ function displayInputLevels() {
                     <input type="text" placeholder="Título do nível">
                     <input type="number" name="percentage" id="" placeholder="% de acerto mínima">
                     <input type="url" name="url-image-level" id="" placeholder="URL da imagem do nível">
-                    <textarea name="description of level" id="" cols="30" rows="10" placeholder="Descrição do nível"></textarea>
+                    <textarea min="6" name="description of level" id="" cols="30" rows="10" placeholder="Descrição do nível"></textarea>
                 </section>
             </section>
         `
 
     }
     screen.innerHTML += `
-        <button class="btn-main" onclick="handleGetQuestionsInfo('sub-screen3')">
+        <button class="btn-main" onclick="handleGetLevelsInfo('sub-screen3')">
             Prosseguir para criar niveis
         </button>
     `
+}
+
+
+function handleGetLevelsInfo() {
+    let screen = document.querySelector('#sub-screen3');
+    let inputs = screen.querySelectorAll('input');
+    let textarea = screen.querySelectorAll('textarea');
+    let contInputNoFilled = 0;
+    let contTextAreaNoFilled = 0;
+    
+    inputs.forEach(input => contInputNoFilled += verifyInputIsFilled(input));
+    textarea.forEach(textarea => contTextAreaNoFilled += verifyTextareaIsFilled(textarea));
+    console.log(contTextAreaNoFilled);
+
+    if (contInputNoFilled > 0 || contTextAreaNoFilled > 0) {
+        window.alert("um ou mais campos não foi preenchido corretamente")
+     }//else{
+    //     for (let i = 0; i < questions.length; i++) {
+    //         let input = questions[i].querySelectorAll('input');
+
+    //         let data = {
+    //             title: input[0].value,
+    //             color: input[1].value,
+    //             answers: [
+    //                 {
+    //                     text: input[2].value,
+    //                     image: input[3].value,
+    //                     isCorrectAnswer: true,
+    //                 },
+    //                 {
+    //                     text: input[4].value,
+    //                     image: input[5].value,
+    //                     isCorrectAnswer: false,
+    //                 },
+    //                 {
+    //                     text: input[6].value,
+    //                     image: input[7].value,
+    //                     isCorrectAnswer: false,
+    //                 },
+    //                 {
+    //                     text: input[8].value,
+    //                     image: input[9].value,
+    //                     isCorrectAnswer: false,
+    //                 },
+    //             ]
+    //         }
+
+    //         dataSubScreen2.push(data)
+    //         // console.log(data)
+    //     }
+    //     nextSubScreen();
+    //     displayInputLevels()
+    // }
+}
+
+
+function verifyTextareaIsFilled(textarea) {
+    let cont = 0;
+    if (textarea.value === "" || verifyTypeTextarea(textarea) === false) {
+        textarea.classList.add('is-not-filled')
+        textarea.value = ""
+        cont++
+    }else {
+        textarea.classList.remove('is-not-filled')
+        if (cont > 0) {
+            cont--;
+        }
+    }
+    return cont;
+}
+
+function verifyTypeTextarea(textarea) {
+    if (textarea.value.length < MINVALUETEXTAREA) {
+        return false
+    }
 }
