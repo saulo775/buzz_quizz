@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/styles.css">
@@ -23,55 +24,28 @@
         <nav>BuzzQuizz</nav>
     </header>
 
-    <!-- TELA 1 -->
-    <!-- TELA 1 -->
-    <!-- TELA 1 -->
-    <!-- colocar classe active na section para ativar -->
     <section class="screen1 active">
-        <!-- colocar classe active na div para ativar -->
         <div class="new-quizz active ">
             <p class="text">Você não criou nenhum <br> quiz ainda :(</p>
-            <p class="button" onclick="handleCreateQuizz()">Criar Quizz</p>
+            <p class="button" data-identifier="create-quizz"  onclick="handleCreateQuizz()">Criar Quizz</p>
         </div>
-        <!-- colocar classe active na section para ativar -->
-        <section class="list-your-quizzes ">
+        <section class="list-your-quizzes " data-identifier="user-quizzes">
             <div class="header-quizzes">
                 <h2>Seus Quizzes</h2>
-                <ion-icon onclick="handleCreateQuizz()" name="add-circle"></ion-icon>
-            </div>
-
-            <div class="quizz"
-                style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg');">
-                <p>O quão fã de cleber bambam você é</p>
-            </div>
-
-            <div class="quizz"
-                style="background-image: url('https://lastfm.freetls.fastly.net/i/u/770x0/2e51d9b517ea442ac4ab0c06a845f88a.jpg');">
-                <p>O quão fã de cleber bambam você é</p>
+                <ion-icon data-identifier="create-quizz" onclick="handleCreateQuizz()" name="add-circle"></ion-icon>
             </div>
         </section>
-
-        <section class="list-all-quizzes ">
+        <section class="list-all-quizzes " data-identifier="general-quizzes">
             <div class="header-quizzes">
                 <h2>Todos os Quizzes</h2>
             </div>
-
         </section>
     </section>
 
-    <!-- TELA 2 -->
-    <!-- TELA 2 -->
-    <!-- TELA 2 -->
-    <!-- colocar classe active na section para ativar -->
     <section class="quizz-container ">
     </section>
-    
-    <!-- TELA 3 -->
-    <!-- TELA 3 -->
-    <!-- TELA 3 -->
-    <!-- colocar classe active na section para ativar -->
+
     <section class="create-quizz-container ">
-        <!-- colocar classe active na section para ativar -->
         <section class="create-basic-info active" id="sub-screen1">
             <h2 class="title-create-quizz">Comece pelo começo</h2>
             <div class="inputs-container">
@@ -82,18 +56,12 @@
             </div>
             <button class="btn-main" onclick="handleGetBasicInfos('inputs-container', 'sub-screen2')">Prosseguir para criar perguntas</button>
         </section>
-
-        <!-- colocar classe active na section para ativar -->
         <section class="create-questions" id="sub-screen2">
             <h2 class="title-create-quizz">Crie suas perguntas</h2>
         </section>
-
-        <!-- colocar classe active na section para ativar -->
         <section class="create-levels" id="sub-screen3">
             <h2 class="title-create-quizz">Agora, decida os níveis</h2>
         </section>
-
-        <!-- colocar classe active na section para ativar -->
         <section class="create-quizz-result content" id="sub-screen4">
             <h2 class="title-create-quizz">Seu quizz está pronto!</h2>
             <div class="create-result-image"

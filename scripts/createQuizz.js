@@ -1,4 +1,3 @@
-//const URLTEST = new RegExp("^((http(s?):\/\/(www.)?[a-z]+.com\/)|(magnet:\?xt=urn:btih:))|(http(s?):\/\/[a-z]?[0-9]\/)")
 const URLTEST = new RegExp(/^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/);
 const COLORTEST = new RegExp('^#([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})|([0-9a-fA-F]{3})$');
 
@@ -8,12 +7,10 @@ let levelsData = [];
 
 let arrayIds = [];
 
-const MINVALUEINPUT = 4;
+const MINVALUEINPUT = 20;
 const MAXVALUEINPUT = 65;
-const MINVALUETEXTAREA = 6;
+const MINVALUETEXTAREA = 30;
 
-
-/*=======PEGA DADOS DA SUB-TELA 1======*/
 function handleGetBasicInfos(containerInputs, nextScreen) {
     let contentInputs = document.querySelector(`.${containerInputs}`);
     let inputs = contentInputs.querySelectorAll("input");
@@ -35,7 +32,6 @@ function handleGetBasicInfos(containerInputs, nextScreen) {
     }
 }
 
-/*=======VERIFICA SE OS INPUTS ESTÃO PREENCHIDOS=====*/
 function verifyInputIsFilled(input) {
     let cont = 0;
     if (input.value === "" || verifyType(input) === false) {
@@ -51,7 +47,6 @@ function verifyInputIsFilled(input) {
     return cont;
 }
 
-/*=======VERIFICA SE OS INPUTS RECEBEM DADOS CORRETOS======*/
 function verifyType(input) {
     if (input.type === 'text') {
         let value = input.value;
@@ -87,7 +82,6 @@ function verifyType(input) {
     }
 }
 
-/*=======FUNCÃO QUE ALTERNA DA SUB-TELA 1 PRA 2======*/
 function nextSubScreen() {
     let subScreenOne = document.querySelector("#sub-screen1");
     let subScreenTwo = document.querySelector("#sub-screen2");
@@ -107,7 +101,6 @@ function nextSubScreen() {
     }
 }
 
-/*=======PERMITE EDITAR OS CARDS DE PERGUNTA======*/
 function handleEditInfoCard(header) {
     let titleCard = header.parentNode;
     let boxInputs = titleCard.parentNode;
@@ -116,7 +109,6 @@ function handleEditInfoCard(header) {
     boxInputs.querySelector(".inputs-qt-and-lvls").classList.add('active')
 }
 
-/*=======MOSTRA NA TELA AS QUESTOES======*/
 function displayInputQuestions(nextScreen) {
     let screenID = nextScreen;
     let screen = document.querySelector(`#${screenID}`);
@@ -127,12 +119,12 @@ function displayInputQuestions(nextScreen) {
                 <!-- para esconder o icone deve adcionar a class="disabled" -->
                 <div class="title-qt-and-lvl">
                     <h2>Pergunta ${i+1}</h2>
-                    <ion-icon onclick="handleEditInfoCard(this)" name="create-outline" role="img" class="md hydrated" aria-label="create outline"></ion-icon>
+                    <ion-icon  data-identifier="expand" onclick="handleEditInfoCard(this)" name="create-outline" role="img" class="md hydrated" aria-label="create outline"></ion-icon>
                 </div>
 
                 <!-- para esconder o icone deve adcionar a class="active" -->
-                <section class="inputs-qt-and-lvls">
-                    <input type="text" placeholder="Texto da pergunta" min="20">
+                <section data-identifier="question" class="inputs-qt-and-lvls">
+                    <input  type="text" placeholder="Texto da pergunta" min="20">
                     <input type="tel" placeholder="Cor de fundo da pergunta">
 
                     <h2>Resposta correta</h2>
@@ -160,7 +152,6 @@ function displayInputQuestions(nextScreen) {
     `
 }
 
-/*=======PEGA DADOS DA TELA DE QUESTOES======*/
 function handleGetQuestionsInfo(subScreen) {
     let screen = document.querySelector(`#${subScreen}`);
     let inputs = screen.querySelectorAll("input");
@@ -215,7 +206,6 @@ function getSubScreen(screenID){
 }
 
 function displayInputLevels() {
-    //let screenID = nextScreen;
     let screen = document.querySelector("#sub-screen3");
 
     for (let i = 0; i < Number(dataSubScreen1.quantityLevels); i++) {
@@ -224,11 +214,11 @@ function displayInputLevels() {
                 <!-- para esconder o icone deve adcionar a class="disabled" -->
                 <div class="title-qt-and-lvl">
                     <h2>Nivel ${i+1}</h2>
-                    <ion-icon onclick="handleEditInfoCard(this)" name="create-outline" role="img" class="md hydrated" aria-label="create outline"></ion-icon>
+                    <ion-icon data-identifier="expand" onclick="handleEditInfoCard(this)" name="create-outline" role="img" class="md hydrated" aria-label="create outline"></ion-icon>
                 </div>
 
                 <!-- para esconder o icone deve adcionar a class="active" -->
-                <section class="inputs-qt-and-lvls">
+                <section class="inputs-qt-and-lvls" data-identifier="level">
                     <input type="text" placeholder="Título do nível">
                     <input type="number" name="percentage" id="" placeholder="% de acerto mínima">
                     <input type="url" name="url-image-level" id="" placeholder="URL da imagem do nível">
@@ -236,7 +226,6 @@ function displayInputLevels() {
                 </section>
             </section>
         `
-
     }
     screen.innerHTML += `
         <button class="btn-main" onclick="handleGetLevelsInfo('sub-screen3')">
@@ -244,7 +233,6 @@ function displayInputLevels() {
         </button>
     `
 }
-
 
 function handleGetLevelsInfo() {
     let screen = document.querySelector("#sub-screen3");
