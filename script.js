@@ -22,8 +22,7 @@ function getDataScreen2(id) {
 function errorFunction(erro) {
     alert("Vish, falhou a parada! Tente novamente!");
 }
-
-function displayMessages2(answers) {
+function displayMessages2(answers){
     let answersreceived = answers.data;
     indexcount = answersreceived.questions;
     data = answersreceived;
@@ -144,7 +143,7 @@ function resultAppears() {
 function levelSum(Element) {
     let account = Number((counter/indexcount.length)*100)
     
-    sumShowed = account;
+    sumShowed = account.toFixed(2);
     if(account < 50){ 
         level = 1
     } else {
@@ -184,7 +183,6 @@ function showScreenQuizz(title) {
     id = title.id
     getDataScreen2(id)
 }
-
 /*FUNÇÃO DE CRIAR QUIZZ*/
 function handleCreateQuizz() {
     let screenOne = document.querySelector('.screen1');
@@ -193,7 +191,6 @@ function handleCreateQuizz() {
     screenOne.classList.remove('active');
     screenThree.classList.add('active');
 }
-
 /*FUNÇÃO DE RETORNAR PARA TELA PRINCIPAL*/
 function backToHome() {
     ///Caso já se tenha criado algum quizz deve se ir para 2º tela da tela 1
