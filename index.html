@@ -141,14 +141,6 @@
             <button>Voltar pra home</button>
         </div>
     </section>
-
-
-
-
-
-
-
-
     
     <!-- TELA 3 -->
     <!-- TELA 3 -->
@@ -164,47 +156,21 @@
                 <input type="number" min="1" name="number-questions" id="" placeholder="Quantidade de perguntas do quizz">
                 <input type="number" min="1" name="number-levels" id="" placeholder="quantidade de níveis do quizz">
             </div>
-            <button class="btn-main" onclick="handleGetInfos('inputs-container', 'sub-screen2')">Prosseguir para criar perguntas</button>
+            <button class="btn-main" onclick="handleGetBasicInfos('inputs-container', 'sub-screen2')">Prosseguir para criar perguntas</button>
         </section>
 
         <!-- colocar classe active na section para ativar -->
-        <section class="create-questions active" id="sub-screen2">
+        <section class="create-questions" id="sub-screen2">
             <h2 class="title-create-quizz">Crie suas perguntas</h2>
-            
-                <section class="box-inputs">
-                    <!-- para esconder o icone deve adcionar a class="disabled" -->
-                    <div class="title-qt-and-lvl">
-                        <h2>Pergunta ABLUE</h2>
-                        <ion-icon onclick="handleEditInfoCard(this)" name="create-outline" role="img" class="md hydrated" aria-label="create outline"></ion-icon>
-                    </div>
-    
-                    <!-- para esconder o icone deve adcionar a class="active" -->
-                    <section class="inputs-qt-and-lvls ">
-                        <input type="text" placeholder="Texto da pergunta" min="20">
-                        <input type="tel" placeholder="Cor de fundo da pergunta">
-                        <h2>Resposta correta</h2>
-                        <input type="text" placeholder="Resposta correta">
-                        <input type="url" placeholder="URL da imagem">
-                        <h2>Respostas incorretas</h2>
-                        <input type="text" placeholder="Resposta incorreta 1" min="1">
-                        <input type="url" placeholder="URL da imagem 1">
-                        <input type="text" placeholder="Resposta incorreta 2" min="1">
-                        <input type="url" placeholder="URL da imagem 2">
-                        <input type="text" placeholder="Resposta incorreta 3" min="1">
-                        <input type="url" placeholder="URL da imagem 3">
-                    </section>
-                </section>
-
-            <button class="btn-main" onclick="getValueQuestions()">Prosseguir para criar niveis</button>
         </section>
 
         <!-- colocar classe active na section para ativar -->
         <section class="create-levels" id="sub-screen3">
             <h2 class="title-create-quizz">Agora, decida os níveis</h2>
 
-            <section class="container-inputs-qts-and-lvls">
+            <!-- <section class="container-inputs-qts-and-lvls">
                 <!-- para esconder o icone deve adcionar a class="disabled" -->
-                <div class="title-qt-and-lvl disabled">
+                <!-- <div class="title-qt-and-lvl disabled">
                     <h2>Nível 1</h2>
                     <ion-icon name="create-outline"></ion-icon>
                 </div>
@@ -218,23 +184,9 @@
                 </section>
             </section>
 
-            <section class="container-inputs-qts-and-lvls">
-                <!-- para esconder o icone deve adcionar a class="disabled" -->
-                <div class="title-qt-and-lvl" >
-                    <h2>Nível 2</h2>
-                    <ion-icon name="create-outline"></ion-icon>
-                </div>
-                <section class="inputs-qt-and-lvls">
-                    <div class="level-and-image_url">
-                        <input type="text" placeholder="Título do nível">
-                        <input type="number" name="percentage" id="" placeholder="% de acerto mínima">
-                        <input type="url" name="url-image-level" id="" placeholder="URL da imagem do nível">
-                        <textarea name="description of level" id="" cols="30" rows="10" placeholder="Descrição do nível"></textarea>
-                    </div>
-                </section>
-            </section>
+    
 
-            <button class="btn-main">Finalizar Quizz</button>
+            <button class="btn-main">Finalizar Quizz</button>-->
         </section>
 
         <!-- colocar classe active na section para ativar -->
