@@ -104,6 +104,9 @@ header nav {
 .item.disabled{
     opacity: 0.3;
 }
+.display {
+    display: none;
+}
 
 .quizz-result img {
     max-width: 340px;
@@ -168,4 +171,6 @@ header nav {
     .quizz-options {
         justify-content: center;
     }
+}
+.selected-question { pointer-events: none;
 }

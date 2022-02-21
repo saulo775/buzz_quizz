@@ -1,12 +1,7 @@
 let id;
-let index = 0;
-let indexcount;
-let counting;
-let data;
-let quantity;
-let counter = 0;
-let sumShowed;
-let level;
+let respostas = [];
+let contador = 0;
+let teste = 0; 
 
 function getData() {
     const promise = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
@@ -15,31 +10,39 @@ function getData() {
 getData();
 
 function getDataScreen2(id) {
+
+
     const promise = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${id}`);
     promise.then(displayMessages2);
+
     promise.catch(errorFunction)
 }
 function errorFunction(erro) {
     alert("Vish, falhou a parada! Tente novamente!");
+
 }
-
 function displayMessages2(answers) {
-    let answersreceived = answers.data;
-    indexcount = answersreceived.questions;
-    data = answersreceived;
-    let screenTwoInfos = document.querySelector(".quizz-container");
 
+    let answersreceived = answers.data
+    teste = answersreceived.questions.length
+  
+    let screenTwoInfos = document.querySelector(".quizz-container");
+    let quantity = answersreceived.questions
+    /*resultAppears(quantity);*/
+    
     screenTwoInfos.innerHTML += `
+
             <div class="banner">
             <img src="${answersreceived.image}" alt="">
             <p>${answersreceived.title}</p>
-            </div>`
+        </div>`
 
     for (let i = 0; i < answersreceived.questions.length; i++) {
 
-        answersreceived.questions[i].answers.sort(() => Math.random() - 0.5);
+        /*answersreceived.questions[i].answers.sort(() => Math.random() - 0.5);*/
 
         screenTwoInfos.innerHTML += `
+
         <div class="quizz-card">
             <div class="header-quizz-card">
                 <p>${answersreceived.questions[i].title}</p>
@@ -54,81 +57,84 @@ function displayMessages2(answers) {
                     <img src=${answersreceived.questions[i].answers[i].image} alt="">
                     <p>${answersreceived.questions[i].answers[i].text}</p>
                     <p class="status display">${answersreceived.questions[i].answers[i].isCorrectAnswer}</p>
-                 </div>
-                 <div onclick=(answerChoosed(this)) class="item ">
-                 <img src=${answersreceived.questions[i].answers[i].image} alt="">
-                 <p>${answersreceived.questions[i].answers[i].text}</p>
-                 <p class="status display">${answersreceived.questions[i].answers[i].isCorrectAnswer}</p>
-                 </div>
+                </div>
+                <div onclick=(answerChoosed(this)) class="item ">
+                <img src=${answersreceived.questions[i].answers[i].image} alt="">
+                <p>${answersreceived.questions[i].answers[i].text}</p>
+                <p class="status display">${answersreceived.questions[i].answers[i].isCorrectAnswer}</p>
+            </div>
                  <div onclick=(answerChoosed(this)) class="item ">
                  <img src=${answersreceived.questions[i].answers[i].image} alt="">
                  <p>${answersreceived.questions[i].answers[i].text}</p>
                  <p class="status display ">${answersreceived.questions[i].answers[i].isCorrectAnswer}</p>
-                </div>
-            </section></div>`}
-
-    quantity = answersreceived.questions;
-    validationFinalScreen();
-    levelSum(quantity);}
-
-function validationFinalScreen(index) {
-    if (indexcount.length === index) {
-        resultAppears()}
+             </div>
+            </section>
+        </div>
+        
+    `
+    }
 }
-
+function validationFinalScreen(contador) {    
+    if(teste === contador){
+        alert("OK")
+        ///chamar função que ativa ultima tela 
+    }
+}
 /////FUNÇÃO QUE TORNA BRANCO O FUNDO AO CLICAR NAS RESPOSTAS
-function answerChoosed(answerpicked) {
-    counting = answerpicked;
-    index++
-    validationFinalScreen(index)
-    answerpicked.classList.add("selected")
-    answerpicked.classList.remove("display")
+function answerChoosed(respostaEscolhida) {
+    contador++
+    validationFinalScreen(contador)
+    respostaEscolhida.classList.add("selected")
+    respostaEscolhida.classList.remove("display")
 
-    const dad = answerpicked.parentNode
-    const dadlist = dad.querySelectorAll("div")
-    colorCheck(dadlist)
-    levelSum(dadlist)
+    const pai = respostaEscolhida.parentNode
+    const pailist = pai.querySelectorAll("div")
+    colorCheck(pailist)
 
-    dadlist.forEach(Element => {
-        Element.classList.add("selected-question")
+    pailist.forEach(Element => {
+       
         if (!(Element.classList.contains("selected"))) {
             Element.classList.add("disabled")
             Element.classList.remove("display")
         }
     })
-   /* setTimeout(scroll2s, 2000)*/
 }
 
-////FUNÇÃO PARA CHECK DE COR E ADICIONAR 
-function colorCheck(received) { ///O problema é que o Element não me permite acessar a classe que representa se é a resposta correta ou não e quando tento retorna undefined como na linha 99
-    
-    received.forEach(Element => {
-        const status = Element.querySelector(".status").innerText
-
-        if (status==="true") {
+    ////FUNÇÃO PARA CHECK DE COR E ADICIONAR 
+function colorCheck(pailist){ ///O problema é que o Element não me permite acessar a classe que representa se é a resposta correta ou não e quando tento retorna undefined como na linha 99
+    pailist.forEach(Element => {
+        const teste = Element.querySelector(".status").innerText
+        console.log(teste)
+        if (teste === "true") {
             Element.classList.add("correct")
-            counter = 1
         } else {
             Element.classList.add("wrong")
-        }})
-        levelSum(counter)
+        }
+    })
 }
-
 ////FUNÇÃO APRA EXIBIR OS RESULTADOS QUANDO FINALIZADO O QUIZZ
-function resultAppears() {
+/*
+function resultAppears(validationNumber) {
+               
+    let pai = respostaEscolhida.parentNode
     let result = document.querySelector(".quizz-container");
-
-    result.innerHTML =
-        `<div class="quizz-card result-card active ">
+    pai.forEach(Element => {
+        console.log(Element)
+        if ((Element.classList.contains("selected"))) {
+            result.innerHTML +=
+                `<div class="quizz-card result-card active">
                  <div class="header-quizz-card">
-                     <p>${sumShowed}% de acerto: Você é um mestre, cara! nivel ${level}!</p>
+                     <p>88% de acerto: Você é praticamente um aluno de Hogwarts!</p>
                  </div>
                  <section class="quizz-options">
                      <div class="item result">
-                         <img  class="result-image" src=${data.image} alt="">
+                         <div class="result-image" style="background-image: url('./assets/gramdpa.png');">
+                             
                          </div>
                          <p>
-                         ${data.title}
+                             Parabéns Potterhead! Bem-vindx a Hogwarts,
+                             aproveite o loop infinito de comida e clique no 
+                             botão abaixo para usar o vira-tempo e reiniciar este teste.
                          </p>
                      </div>
                  </section>
@@ -138,40 +144,38 @@ function resultAppears() {
                  <button onclick="restartQuizz()">Reiniciar Quizz</button>
                  <button onclick="backToHome()">Voltar pra home</button>
              </div>`
-    levelSum();
-}
-////FUNÇÃO PARA SOMAR AS PONTUAÇÕES E CALCULAR A % DE ACERTO
-function levelSum(Element) {
-    let account = Number((counter/indexcount.length)*100)
-    
-    sumShowed = account;
-    if(account < 50){ 
-        level = 1
-    } else {
-        if (account > 50)
-        level = 2
-     }
+
+        }
+    }) 
+            }
+
+
+
+resultAppears()*/
+////SET INTERVAL PARA TENTAR SCROLLAR A FUNÇÃO PARA PROXIMA PERGUNTA 2S DEPOIS DE CLICADA 
+setInterval(scroll2s, 100000)
+function scroll2s() {
+    window.scroll(0, 20) ////Arrumar a rolagem para baixo
 }
 
-////SET INTERVAL PARA TENTAR SCROLLAR A FUNÇÃO PARA PROXIMA PERGUNTA 2S DEPOIS DE CLICADA 
-/*function scroll2s() {
-    let scrolledElement = document.querySelector(".quizz-card")
-    scrolledElement.scrollIntoView({ inline: "end" }) ////Arrumar a rolagem para baixo
-}*/
 function displayMessages(answers) {
 
     let answersreceived = answers.data
+
     let allQuizzes = document.querySelector(".list-all-quizzes");
     let screenTwoInfos = document.querySelector(".quizz-container");
-    array = answers.data
 
+    array = answers.data
     for (let i = 0; i < answersreceived.length; i++) {
+
         allQuizzes.innerHTML += `
         <div class="quizz" id="${answersreceived[i].id}"  onclick="showScreenQuizz(this)" style="background-image: linear-gradient(to bottom, transparent 0%,#000 100%), url(${answersreceived[i].image});">            
         <h1>"${answersreceived[i].title}"</h1>
             </div>
-    `}
+    `
+    }
 }
+
 
 /*FUNÇAO DE JOGAR O QUIZZ*/
 function showScreenQuizz(title) {
@@ -180,12 +184,14 @@ function showScreenQuizz(title) {
     let screenTwo = document.querySelector(".quizz-container");
     screenOne.classList.remove("active")
     screenTwo.classList.add("active")
-    
+
     id = title.id
+
     getDataScreen2(id)
 }
 
 /*FUNÇÃO DE CRIAR QUIZZ*/
+
 function handleCreateQuizz() {
     let screenOne = document.querySelector('.screen1');
     let screenThree = document.querySelector('.create-quizz-container');
@@ -193,32 +199,18 @@ function handleCreateQuizz() {
     screenOne.classList.remove('active');
     screenThree.classList.add('active');
 }
-
 /*FUNÇÃO DE RETORNAR PARA TELA PRINCIPAL*/
+
 function backToHome() {
     ///Caso já se tenha criado algum quizz deve se ir para 2º tela da tela 1
     let screenOne = document.querySelector('.screen1');
     let screenTwo = document.querySelector(".quizz-container");
-    let result = document.querySelector(".quizz-card");
-    let result2 = document.querySelector(".footer-quizz");
 
-    result2.classList.remove('active')
     screenOne.classList.add('active');
     screenTwo.classList.remove('active');
-    result.classList.remove('active')
-    window.location.reload();
 }
 ///FUNÇÃO PARA REINICIAR O QUIZZ SCROLLA PARA O INICIO DA TELA
-function restartQuizz() { ///RESOLVER PROBLEMA DE APAGAR TUDO AO REINICIAR
-    let test = document.querySelector(".quizz-card")
-    let footer = document.querySelector(".footer-quizz");
-    let resultcard = document.querySelector(".result-card");
-
-    test.classList.remove("active")
-    resultcard.classList.remove('active')
-    footer.classList.remove('active')
-
+function restartQuizz() {
     window.scroll(0, 0)
-    getDataScreen2(id)
-    index = 0;
+    window.location.reload();
 }
